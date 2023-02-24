@@ -16,8 +16,9 @@ jobs:
         run: pip install mkdocs mkdocs-material
       - name: Build docs
         run: mkdocs build --clean
-      - name: Deploy docs
         run: mkdocs gh-deploy --force
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PAT }}
           publish_dir: ./site
