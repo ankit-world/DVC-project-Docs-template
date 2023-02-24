@@ -12,11 +12,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-
-      - name: Deploy documentation
         env:
           GH_TOKEN: ${{ secrets.PAT }}
-        run: |
-          pip install mkdocs-material       
-        run: |
-          mkdocs gh-deploy -c -m "Deploy documentation"
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
