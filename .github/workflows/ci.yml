@@ -14,5 +14,6 @@ jobs:
           python-version: 3.x
         env:
           GH_TOKEN: ${{ secrets.PAT }}
+      -run: git remote add https://github.com/ankit-world/DVC-project-Docs-template.git
       - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
